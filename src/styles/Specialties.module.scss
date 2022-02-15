@@ -1,0 +1,89 @@
+@use 'mixins';
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.8rem;
+  text-align: center;
+
+  .iconContainer {
+    width: max-content;
+    padding: 1.3rem;
+    border-radius: 50%;
+    line-height: 0;
+
+    svg {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  h2 {
+    margin-top: 1rem;
+    color: whitesmoke;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    color: var(--color-txt);
+    max-width: 300px;
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  @include mixins.max-width();
+
+  .title {
+    text-align: center;
+    padding: 0 1rem;
+    margin: 5rem 0 2em;
+    
+    span {
+      font-family: 'Architects Daughter', cursive;
+      font-size: 2.1rem;
+      color: var(--color-btn);
+      margin-bottom: 1rem;
+      @media screen and (max-width: 440px) {
+        font-size: max(6vw, 1rem);
+      }
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      color: whitesmoke;
+      @media screen and (max-width: 550px) {
+        font-size: max(8vw, 1.2rem);
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 5rem 0 10rem;
+    @media screen and (max-width: 860px) {
+      gap: 0;
+      margin: 5rem 2rem;
+    }
+    @media screen and (max-width: 440px) {
+      flex-direction: column;
+    }
+
+
+    .row1, .row2 {
+      display: flex;
+      gap: 2rem;
+      @media screen and (max-width: 860px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

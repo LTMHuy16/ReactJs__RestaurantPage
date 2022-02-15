@@ -1,0 +1,64 @@
+@use 'mixins';
+
+.container {
+  @include mixins.max-width();
+
+  .title {
+    text-align: center;
+    padding: 0 1rem;
+    margin: 5rem 0 2em;
+    
+    span {
+      font-family: 'Architects Daughter', cursive;
+      font-size: 2.1rem;
+      color: var(--color-btn);
+      margin-bottom: 1rem;
+      @media screen and (max-width: 440px) {
+        font-size: max(6vw, 1rem);
+      }
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      color: whitesmoke;
+      @media screen and (max-width: 550px) {
+        font-size: max(8vw, 1.2rem);
+      }
+    }
+  }
+
+  .dishesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1024px;
+    margin: 0 auto;
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.dishesContainer {
+  margin: 1rem;
+  
+  .dishes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .name {
+      font-size: 1.5rem;
+      color: whitesmoke;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: var(--color-btn);
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--color-txt);
+    width: max(25vw, 250px);
+  }
+}

@@ -1,0 +1,105 @@
+@use './mixins' as mx;
+
+.home {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+  @include mx.max-width;
+}
+
+
+.nav {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.bg1 {
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  height: 95%;
+  width: 100%;
+  z-index: -1;
+  background-image: url("../assets//bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .photoContainer {
+    position: absolute;
+    top: 0;
+    left: -23%;
+    width: 120%;
+    height: 95%;
+    overflow-y: hidden;
+    @media screen and (max-width: 768px) {
+      width: 750px;
+      height: 750px;
+      left: -20%;
+    }
+    @media screen and (max-width: 575px) {
+      width: 550px;
+      height: 550px;
+      left: -50%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.slogan {
+  padding: 2rem;
+  margin: 7rem 0 4rem;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  max-width: 650px;
+  @media screen and (max-width: 768px) {
+    max-width: 85vw;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: unset;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: whitesmoke;
+  }
+
+  p {
+    margin-bottom: 3rem;
+    max-width: 500px;
+    font-size: 1.5rem;
+    color: var(--color-txt);
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-btn);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  
+    &:hover {
+      background-color: black;
+      svg, span {
+        color: var(--color-btn);
+        fill: var(--color-btn);
+      }
+    }
+  
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+}
